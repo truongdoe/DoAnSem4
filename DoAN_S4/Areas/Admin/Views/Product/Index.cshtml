@@ -17,7 +17,7 @@
             <h6 class="m-0 font-weight-bold text-primary">Danh sách Sản Phẩm</h6>
         </div>
 
-        <div class="page-header row">
+        <div class="page-header row" style="padding-top:10px">
             <div class="col-md-12" style="display: flex;">
                 <form action="" method="get" class="form-inline ml-lg-auto">
                     <div class="form-group">
@@ -51,12 +51,11 @@
                         <tr>
                             <td class="text-center align-middle" scope="row"> @Html.DisplayFor(modelItem => item._id)</td>
                             <td class="text-center align-middle" scope="row"> @Html.DisplayFor(modelItem => item.ProductName)</td>
-                            <td class="text-center align-middle" scope="row"> @Html.DisplayFor(modelItem => item.Images)</td>
+                            <td class="text-center align-middle" scope="row"> <img src="/images/@item.Images" width="100px" alt="Alternate Text" /></td>
                             <td class="text-center align-middle" scope="row"> @Html.DisplayFor(modelItem => item.Quantity)</td>
                             <td class="text-center align-middle" scope="row"> @Html.DisplayFor(modelItem => item.Id_Cate)</td>
                             <td class="text-center align-middle" scope="row"> @Html.DisplayFor(modelItem => item.Price)</td>
                             <td class="text-center align-middle" scope="row"> @Html.DisplayFor(modelItem => item.Content)</td>
-                            <td class="text-center align-middle"> @Html.DisplayFor(modelItem => item.ProductName)</td>
                             <td class="text-center align-middle">
                             @if (item.Status)
                             {
@@ -68,12 +67,12 @@
 
                             }
                              </td>
-                            <td class="d-flex">
+                            <td style="text-align: center; padding-top: 30px;" >
                                 <a asp-action="Edit" asp-area="Admin" asp-controller="Product" asp-route-id="@item._id">
                                     <i class="fas fa-info-circle"></i>
                                 </a>
                             </td>
-                            <td>
+                            <td style="text-align: center; padding-top: 30px;" >
                                 <a asp-action="Delete" asp-area="Admin" asp-controller="Product" asp-route-id="@item._id" onclick="return confirm('Are you sure ?')">
                                     <i class="fas fa-trash"></i>
                                 </a>

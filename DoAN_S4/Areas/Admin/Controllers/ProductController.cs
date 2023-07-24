@@ -104,10 +104,39 @@ namespace DoAN_S4.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit(Product product, IFormFile fileUpload)
+        public IActionResult Edit(Product product, IFormFile fileUpload , IFormCollection collection, IFormFile formFile)
         {
-            repositoryProduct.Update(product);
-            return RedirectToAction(nameof(Index));
+            if (ModelState.IsValid)
+            {
+                // upload file vào thư mục wwwroot/Product
+                var files = HttpContext.Request.Form.Files;
+                //using System.Linq;
+                if (files.Count() > 0 && files[0].Length > 0)
+                {
+                    var file = files[0];
+                    var FileName = file.FileName;
+                    // Nhớ tạo thư mục avatar trong thư mụcwwwroot/images
+                    //using System.IO;
+                    var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\images", FileName);
+                    using (var stream = new FileStream(path, FileMode.Create))
+                    {
+                        file.CopyTo(stream);
+                        product.Images = FileName; // gán tên ảnh cho thuộc tính Avatar
+                    }
+
+                }
+            }
+            try
+            {
+                // TODO: Add insert logic here
+                repositoryProduct.Update(product);
+                return RedirectToAction(nameof(Index));
+            }
+            catch
+            {
+                return View();
+            }
+          
         }
 
         public IActionResult productFull()
