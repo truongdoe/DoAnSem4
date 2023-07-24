@@ -12,10 +12,10 @@ namespace DoAN_S4.Models.DataModel
     {
         [BsonId]
         [BsonElement("Id_Category")]
-        public int Id_Category { get; set; }
+        public int _id { get; set; }
 
-        [BsonElement("Name")]
-        public string Name { get; set; }
+        [BsonElement("CategoryName")]
+        public string CategoryName { get; set; }
 
         [BsonElement("Status")]
         public bool Status { get; set; }

@@ -11,7 +11,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using DoAN_S4.Areas.Admin.Models.BussinesModel;
 
-
 namespace DoAN_S4
 {
     public class Startup
@@ -35,6 +34,8 @@ namespace DoAN_S4
             services.AddScoped<DbConText>();
             services.AddScoped<IRepositoryCategory, RepositoryCategory>();
             services.AddScoped<IRepositoryProduct, RepositoryProduct>();
+
+          
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);

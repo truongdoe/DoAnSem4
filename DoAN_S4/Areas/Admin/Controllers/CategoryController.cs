@@ -27,7 +27,7 @@ namespace DoAN_S4.Areas.Admin.Controllers
             if (string.IsNullOrEmpty(name))
             {
                 long totalpage;
-                var data = repositoryCategory.Paging(page, 2, out totalpage);
+                var data = repositoryCategory.Paging(page, 5, out totalpage);
                 ViewBag.totalpage = totalpage;
                 ViewBag.page = page;
                 return View(data);
@@ -35,7 +35,7 @@ namespace DoAN_S4.Areas.Admin.Controllers
             else
             {
                 long totalpage;
-                var data = repositoryCategory.SearchPaging(name, page, 2, out totalpage);
+                var data = repositoryCategory.SearchPaging(name, page, 5, out totalpage);
                 ViewBag.totalpage = totalpage;
                 ViewBag.page = page;
                 ViewBag.name = name;
@@ -68,7 +68,7 @@ namespace DoAN_S4.Areas.Admin.Controllers
         }
 
         // GET: Category/Edit/5
-        public ActionResult Edit(int id)
+        public IActionResult Edit(int id)
         {
             var p = repositoryCategory.GetByID(id);
             return View(p);
@@ -77,7 +77,7 @@ namespace DoAN_S4.Areas.Admin.Controllers
         // POST: Category/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(Category category)
+        public IActionResult Edit(Category category)
         {
             repositoryCategory.Update(category);
             return RedirectToAction(nameof(Index));

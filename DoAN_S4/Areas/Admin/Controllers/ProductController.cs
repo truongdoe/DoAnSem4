@@ -17,6 +17,7 @@ namespace DoAN_S4.Areas.Admin.Controllers
     {
         IRepositoryCategory repositoryCategory;
         IRepositoryProduct repositoryProduct;
+
         
         public ProductController(IRepositoryProduct repositoryProduct , IRepositoryCategory repositoryCategory)
         {
@@ -25,41 +26,41 @@ namespace DoAN_S4.Areas.Admin.Controllers
         }
 
         // GET: Product
-        public ActionResult Index( string name , int page = 1)
+        public IActionResult Index( string name , int page = 1)
         {
-            //page = page < 1 ? 1 : page;
-            //if (string.IsNullOrEmpty(name))
-            //{
-            //    long totalpage;
-            //    var data = repositoryProduct.Paging(page, 5, out totalpage);
-            //    ViewBag.totalpage = totalpage;
-            //    ViewBag.page = page;
-            //    return View(data);
-            //}
-            //else
-            //{
-            //    long totalpage;
-            //    var data = repositoryProduct.SearchPaging(name, page, 5, out totalpage);
-            //    ViewBag.totalpage = totalpage;
-            //    ViewBag.page = page;
-            //    ViewBag.name = name;
-            //    return View(data);
-            //}
-            var data = repositoryProduct.getAll();
-            return View(data);
+            page = page < 1 ? 1 : page;
+            if (string.IsNullOrEmpty(name))
+            {
+                long totalpage;
+                var data = repositoryProduct.Paging(page, 5, out totalpage);
+                ViewBag.totalpage = totalpage;
+                ViewBag.page = page;
+                return View(data);
+            }
+            else
+            {
+                long totalpage;
+                var data = repositoryProduct.SearchPaging(name, page, 5, out totalpage);
+                ViewBag.totalpage = totalpage;
+                ViewBag.page = page;
+                ViewBag.name = name;
+                return View(data);
+            }
+            //var data = repositoryProduct.getAll();
+            //return View(data);
         }
 
         // GET: Product/Create
-        public ActionResult Create()
+        public IActionResult Create()
         {
-            ViewBag.Id_Category = new SelectList(repositoryCategory.getAll(), "_id", "Name");
+            ViewBag.categoryId = new SelectList(repositoryCategory.getAll(), "_id", "CategoryName");
             return View();
         }
 
         // POST: Product/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Product product  ,IFormCollection collection)
+        public IActionResult Create(Product product  ,IFormCollection collection, IFormFile formFile)
         {
             if (ModelState.IsValid)
             {
@@ -94,10 +95,10 @@ namespace DoAN_S4.Areas.Admin.Controllers
         }
 
         // GET: Product/Edit/5
-        public ActionResult Edit(string id)
+        public IActionResult Edit(string id)
         {
             var p = repositoryProduct.GetByID(id);
-            ViewBag.categoryId = new SelectList(repositoryCategory.getAll(), "_id", "Name", p.Id_Category);
+            ViewBag.categoryId = new SelectList(repositoryCategory.getAll(), "_id", "CategoryName", p.Id_Cate);
             return View(p);
         }
 
@@ -116,7 +117,7 @@ namespace DoAN_S4.Areas.Admin.Controllers
         }
 
         // GET: Product/Delete/5
-        public ActionResult Delete(string id)
+        public IActionResult Delete(string id)
         {
             repositoryProduct.Delete(id);
             return RedirectToAction(nameof(Index));

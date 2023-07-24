@@ -51,7 +51,7 @@ namespace DoAN_S4.Areas.Admin.Models.BussinesModel
                         "$lookup",new BsonDocument
                         {
                             {"from","categories" },
-                            {"localField","Id_Category" },
+                            {"localField","Id_Cate" },
                             {"foreignField","_id" },
                             {"as","categories" }
                         }
@@ -68,7 +68,7 @@ namespace DoAN_S4.Areas.Admin.Models.BussinesModel
                 p.Name = e["Name"].ToString();
                 p.Images = e["Images"].ToString();
                 p.Quantity = e["Quantity"].ToInt32();
-                p.NameCategory = e["categories"].AsBsonArray[1]["Name"].ToString();
+                p.NameCategory = e["categories"].AsBsonArray[1]["CategoryName"].ToString();
                 p.Price = e["Price"].ToInt32();
                 p.Content = e["Content"].ToString();
                 p.Status = e["Status"].ToInt32();
@@ -95,18 +95,18 @@ namespace DoAN_S4.Areas.Admin.Models.BussinesModel
         public List<Product> SearchPaging(string name, int page, int pagesize, out long totalpage)
         {
             int skip = pagesize * (page - 1);
-            long rows = db.products.CountDocuments(x => x.Name.ToLower().Contains(name.ToLower()));
+            long rows = db.products.CountDocuments(x => x.ProductName.ToLower().Contains(name.ToLower()));
             totalpage = rows % pagesize == 0 ? rows / pagesize : (rows / pagesize) + 1;
-            return db.products.Find(x => x.Name.ToLower().Contains(name.ToLower())).Skip(skip).Limit(pagesize).ToList();
+            return db.products.Find(x => x.ProductName.ToLower().Contains(name.ToLower())).Skip(skip).Limit(pagesize).ToList();
         }
 
         public bool Update(Product entity)
         {
             var p = Builders<Product>.Update
-               .Set("Name", entity.Name)
+               .Set("ProductName", entity.ProductName)
                .Set("Images", entity.Images)
                .Set("Quantity", entity.Quantity)
-               .Set("Id_Category", entity.Id_Category)
+               .Set("Id_Cate", entity.Id_Cate)
                .Set("Price", entity.Price)
                .Set("Content", entity.Content)
                .Set("Status", entity.Status);

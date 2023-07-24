@@ -19,7 +19,7 @@ namespace DoAN_S4.Areas.Admin.Models.BussinesModel
         {
             try
             {
-                db.categories.DeleteOne(x => x.Id_Category == key);
+                db.categories.DeleteOne(x => x._id == key);
             }
             catch (Exception)
             {
@@ -36,7 +36,7 @@ namespace DoAN_S4.Areas.Admin.Models.BussinesModel
 
         public Category GetByID(int key)
         {
-            return db.categories.Find(x => x.Id_Category == key).FirstOrDefault();
+            return db.categories.Find(x => x._id == key).FirstOrDefault();
         }
 
         public bool Insert(Category entity)
@@ -56,17 +56,17 @@ namespace DoAN_S4.Areas.Admin.Models.BussinesModel
         public List<Category> SearchPaging(string name, int page, int pagesize, out long totalpage)
         {
             int skip = pagesize * (page - 1);
-            long rows = db.categories.CountDocuments(x => x.Name.ToLower().Contains(name.ToLower()));
+            long rows = db.categories.CountDocuments(x => x.CategoryName.ToLower().Contains(name.ToLower()));
             totalpage = rows % pagesize == 0 ? rows / pagesize : (rows / pagesize) + 1;
-            return db.categories.Find(x => x.Name.ToLower().Contains(name.ToLower())).Skip(skip).Limit(pagesize).ToList();
+            return db.categories.Find(x => x.CategoryName.ToLower().Contains(name.ToLower())).Skip(skip).Limit(pagesize).ToList();
         }
 
         public bool Update(Category entity)
         {
             var p = Builders<Category>.Update
-               .Set("Name", entity.Name)
-               .Set("Status", entity.Status);
-            db.categories.UpdateOne(x => x.Id_Category == entity.Id_Category, p);
+               .Set("CategoryName", entity.CategoryName)
+               .Set("Status", entity.Status);                                                                                                                           
+            db.categories.UpdateOne(x => x._id == entity._id, p);
             return true;
         }
     }
