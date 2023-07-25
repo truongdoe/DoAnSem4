@@ -10,6 +10,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using DoAN_S4.Areas.Admin.Models.BussinesModel;
+using DoAN_S4.Areas.Admin.Models.BussinesModel.IRepository;
+using DoAN_S4.Areas.Admin.Models.BussinesModel.Reposity;
 
 namespace DoAN_S4
 {
@@ -34,8 +36,10 @@ namespace DoAN_S4
             services.AddScoped<DbConText>();
             services.AddScoped<IRepositoryCategory, RepositoryCategory>();
             services.AddScoped<IRepositoryProduct, RepositoryProduct>();
+            services.AddScoped<IRepositorySize, RepositorySize>();
+            services.AddScoped<IRepositotyColor, RepositoryColor>();
 
-          
+
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
