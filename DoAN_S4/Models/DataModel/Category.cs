@@ -11,7 +11,7 @@ namespace DoAN_S4.Models.DataModel
     public class Category
     {
         [BsonId]
-        [BsonElement("Id_Category")]
+        [BsonElement("_id")]
         public int _id { get; set; }
 
         [BsonElement("CategoryName")]
