@@ -88,7 +88,7 @@ using DoAN_S4.Models;
                 ");
             EndContext();
             BeginContext(629, 444, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "55bb844f75f844e08ba662314ec2bd36", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9d3d4bdf1a6549f290891632f626b3d5", async() => {
                 BeginContext(689, 377, true);
                 WriteLiteral(@"
                     <div class=""form-group"">
@@ -248,7 +248,7 @@ WriteAttributeValue("", 2600, item.Images, 2600, 12, false);
             WriteLiteral("                             </td>\r\n                            <td style=\"text-align: center; padding-top: 30px;\" >\r\n                                ");
             EndContext();
             BeginContext(3696, 198, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c0c5010d5b714c0288eca818e580af7a", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b7f1d0802f5c4808883727425754e69c", async() => {
                 BeginContext(3784, 106, true);
                 WriteLiteral("\r\n                                    <i class=\"fas fa-info-circle\"></i>\r\n                                ");
                 EndContext();
@@ -287,7 +287,7 @@ WriteAttributeValue("", 2600, item.Images, 2600, 12, false);
             WriteLiteral("\r\n                            </td>\r\n                            <td style=\"text-align: center; padding-top: 30px;\" >\r\n                                ");
             EndContext();
             BeginContext(4045, 237, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "235575f8330746fe8a73d2932a15b96a", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c568b7d01d3f47c79c5192d3d97dc908", async() => {
                 BeginContext(4178, 100, true);
                 WriteLiteral("\r\n                                    <i class=\"fas fa-trash\"></i>\r\n                                ");
                 EndContext();
