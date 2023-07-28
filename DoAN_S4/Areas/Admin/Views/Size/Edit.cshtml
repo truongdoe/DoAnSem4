@@ -1,17 +1,16 @@
 ﻿@model DoAN_S4.Models.DataModel.Size
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Edit";
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>Create Size</h2>
+<h2>Edit Size</h2>
 
-<hr />
 <div class="container">
     <div class="row">
         <div class="col-md-6">
-            <form asp-action="Create">
+            <form asp-action="Edit">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <div class="form-group">
                     <label asp-for="_id" class="control-label"></label>
@@ -40,5 +39,3 @@
         </div>
     </div>
 </div>
-
-

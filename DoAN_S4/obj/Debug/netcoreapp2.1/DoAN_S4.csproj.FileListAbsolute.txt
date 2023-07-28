@@ -41,3 +41,9 @@ C:\Users\Truongdoe\OneDrive\Desktop\ĐỒ án sem 4\DoAN_S4\DoAN_S4\obj\Debug\ne
 C:\Users\Truongdoe\OneDrive\Desktop\ĐỒ án sem 4\DoAN_S4\DoAN_S4\obj\Debug\netcoreapp2.1\DoAN_S4.csprojAssemblyReference.cache
 C:\Users\Truongdoe\OneDrive\Desktop\ĐỒ án sem 4\DoAN_S4\DoAN_S4\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\Product\Edit.g.cshtml.cs
 C:\Users\Truongdoe\OneDrive\Desktop\ĐỒ án sem 4\DoAN_S4\DoAN_S4\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\Size\Index.g.cshtml.cs
+C:\Users\Truongdoe\OneDrive\Desktop\ĐỒ án sem 4\DoAN_S4\DoAN_S4\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\Size\Create.g.cshtml.cs
+C:\Users\Truongdoe\OneDrive\Desktop\ĐỒ án sem 4\DoAN_S4\DoAN_S4\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\Size\Edit.g.cshtml.cs
+C:\Users\Truongdoe\OneDrive\Desktop\ĐỒ án sem 4\DoAN_S4\DoAN_S4\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\Product\productFull.g.cshtml.cs
+C:\Users\Truongdoe\OneDrive\Desktop\ĐỒ án sem 4\DoAN_S4\DoAN_S4\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\Color\Index.g.cshtml.cs
+C:\Users\Truongdoe\OneDrive\Desktop\ĐỒ án sem 4\DoAN_S4\DoAN_S4\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\Color\Create.g.cshtml.cs
+C:\Users\Truongdoe\OneDrive\Desktop\ĐỒ án sem 4\DoAN_S4\DoAN_S4\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\Color\Edit.g.cshtml.cs
