@@ -12999,23 +12999,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Truongdoe\\.nuget\\packages\\": {},
+    "C:\\Users\\zzz\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Truongdoe\\OneDrive\\Desktop\\ĐỒ án sem 4\\DoAN_S4\\DoAN_S4\\DoAN_S4.csproj",
+      "projectUniqueName": "D:\\DoAn\\DoAnSem4\\DoAN_S4\\DoAN_S4.csproj",
       "projectName": "DoAN_S4",
-      "projectPath": "C:\\Users\\Truongdoe\\OneDrive\\Desktop\\ĐỒ án sem 4\\DoAN_S4\\DoAN_S4\\DoAN_S4.csproj",
-      "packagesPath": "C:\\Users\\Truongdoe\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Truongdoe\\OneDrive\\Desktop\\ĐỒ án sem 4\\DoAN_S4\\DoAN_S4\\obj\\",
+      "projectPath": "D:\\DoAn\\DoAnSem4\\DoAN_S4\\DoAN_S4.csproj",
+      "packagesPath": "C:\\Users\\zzz\\.nuget\\packages\\",
+      "outputPath": "D:\\DoAn\\DoAnSem4\\DoAN_S4\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Truongdoe\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\zzz\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
