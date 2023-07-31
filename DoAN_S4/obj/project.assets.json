@@ -13005,11 +13005,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Truongdoe\\OneDrive\\Desktop\\DoAN_S4\\DoAN_S4\\DoAN_S4\\DoAN_S4.csproj",
+      "projectUniqueName": "C:\\Users\\Truongdoe\\OneDrive\\Desktop\\ĐỒ án sem 4\\DoAN_S4\\DoAN_S4\\DoAN_S4.csproj",
       "projectName": "DoAN_S4",
-      "projectPath": "C:\\Users\\Truongdoe\\OneDrive\\Desktop\\DoAN_S4\\DoAN_S4\\DoAN_S4\\DoAN_S4.csproj",
+      "projectPath": "C:\\Users\\Truongdoe\\OneDrive\\Desktop\\ĐỒ án sem 4\\DoAN_S4\\DoAN_S4\\DoAN_S4.csproj",
       "packagesPath": "C:\\Users\\Truongdoe\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Truongdoe\\OneDrive\\Desktop\\DoAN_S4\\DoAN_S4\\DoAN_S4\\obj\\",
+      "outputPath": "C:\\Users\\Truongdoe\\OneDrive\\Desktop\\ĐỒ án sem 4\\DoAN_S4\\DoAN_S4\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

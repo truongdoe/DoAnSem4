@@ -97,3 +97,5 @@ C:\Users\Truongdoe\OneDrive\Desktop\DoAN_S4\DoAN_S4\DoAN_S4\obj\Debug\netcoreapp
 C:\Users\Truongdoe\OneDrive\Desktop\DoAN_S4\DoAN_S4\DoAN_S4\obj\Debug\netcoreapp2.1\DoAN_S4.dll
 C:\Users\Truongdoe\OneDrive\Desktop\DoAN_S4\DoAN_S4\DoAN_S4\obj\Debug\netcoreapp2.1\DoAN_S4.pdb
 C:\Users\Truongdoe\OneDrive\Desktop\DoAN_S4\DoAN_S4\DoAN_S4\obj\Debug\netcoreapp2.1\DoAN_S4.csproj.CopyComplete
+C:\Users\Truongdoe\OneDrive\Desktop\ĐỒ án sem 4\DoAN_S4\DoAN_S4\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\Account\Index.g.cshtml.cs
+C:\Users\Truongdoe\OneDrive\Desktop\ĐỒ án sem 4\DoAN_S4\DoAN_S4\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\Login\Login.g.cshtml.cs
