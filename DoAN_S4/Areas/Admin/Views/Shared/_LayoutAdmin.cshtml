@@ -110,7 +110,32 @@
                     </div>
                 </div>
             </li>
-
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo333"
+                   aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Comments </span>
+                </a>
+                <div id="collapseTwo333" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a asp-controller="Comment" asp-action="Create" class="collapse-item">Thêm mới</a>
+                        <a asp-controller="Comment" asp-action="Index" class="collapse-item">Danh sách comment</a>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo3323"
+                   aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Mã giảm giáx` </span>
+                </a>
+                <div id="collapseTwo3323" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a asp-controller="DiscoutCode" asp-action="Create" class="collapse-item">Thêm mới</a>
+                        <a asp-controller="DiscoutCode" asp-action="Index" class="collapse-item">Danh sách mã giảm giá</a>
+                    </div>
+                </div>
+            </li>
             <!-- Nav Item - Utilities Collapse Menu -->
             @*<li class="nav-item">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"

@@ -27,7 +27,7 @@ namespace DoAN_S4.Areas.Admin.Models.BussinesModel
         public IMongoCollection<Category> categories => connections.GetCollection<Category>("Category");
         public IMongoCollection<Product> products => connections.GetCollection<Product>("Product");
         //public IMongoCollection<Product_Detail> products_details => connections.GetCollection<Product_Detail>("ProductDetail");
-        //public IMongoCollection<Account> accounts => connections.GetCollection<Account>("Account");
+        public IMongoCollection<Account> accounts => connections.GetCollection<Account>("Account");
         //public IMongoCollection<Blog> blogs => connections.GetCollection<Blog>("Blog");
         public IMongoCollection<Size> sizes => connections.GetCollection<Size>("Size");
         public IMongoCollection<Color> colors => connections.GetCollection<Color>("Color");
