@@ -12,6 +12,10 @@ using Microsoft.Extensions.DependencyInjection;
 using DoAN_S4.Areas.Admin.Models.BussinesModel;
 using DoAN_S4.Areas.Admin.Models.BussinesModel.IRepository;
 using DoAN_S4.Areas.Admin.Models.BussinesModel.Reposity;
+using Microsoft.Extensions.DependencyInjection.Extensions;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using MongoDB.Driver;
 
 namespace DoAN_S4
 {
@@ -38,9 +42,51 @@ namespace DoAN_S4
             services.AddScoped<IRepositoryProduct, RepositoryProduct>();
             services.AddScoped<IRepositorySize, RepositorySize>();
             services.AddScoped<IRepositotyColor, RepositoryColor>();
+            services.AddScoped<IRepositoryAccount, RepositoryAccount>();
 
+            /////ddat
 
+            services.AddAuthentication("BkapSecuritySchema").AddCookie("BkapSecuritySchema", ops =>
+            {
+                ops.Cookie = new Microsoft.AspNetCore.Http.CookieBuilder
+                {
+                    HttpOnly = true,
+                    Name = "Bkap.Security.Cookie",
+                    Path = "/",
+                    SameSite = Microsoft.AspNetCore.Http.SameSiteMode.Lax,
+                    SecurePolicy = Microsoft.AspNetCore.Http.CookieSecurePolicy.SameAsRequest
+                };
+                ops.LoginPath = new Microsoft.AspNetCore.Http.PathString("/Admin/Login/Index");
+                ops.ReturnUrlParameter = "RequestPath";
+                ops.SlidingExpiration = true;
+            });
+            services.Configure<CookiePolicyOptions>(options =>
+            {
+                //options.CheckConsentNeeded = context => true;
+                options.MinimumSameSitePolicy = SameSiteMode.None;
+            });
 
+            //services.AddMvc().AddNToastNotifyNoty(new NotyOptions
+            //{
+            //    ProgressBar = true,
+            //    Timeout = 1000,
+            //    Theme = "metroui",
+            //    Layout = "topRight",
+            //});
+
+            services.Configure<CookiePolicyOptions>(options =>
+            {
+                options.MinimumSameSitePolicy = Microsoft.AspNetCore.Http.SameSiteMode.None;
+            });
+            services.AddDistributedMemoryCache();
+            services.AddSession(options =>
+            {
+                options.IdleTimeout = new TimeSpan(0, 30, 0);
+                options.Cookie.Name = "Bkap.Session";
+                options.Cookie.HttpOnly = true;
+                options.Cookie.IsEssential = true;
+            });
+            /////ddat
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
@@ -60,7 +106,9 @@ namespace DoAN_S4
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+            app.UseSession();
             app.UseCookiePolicy();
+            app.UseAuthentication();
 
             app.UseMvc(routes =>
             {

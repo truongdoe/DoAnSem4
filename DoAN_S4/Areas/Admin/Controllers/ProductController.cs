@@ -18,15 +18,15 @@ namespace DoAN_S4.Areas.Admin.Controllers
         IRepositoryCategory repositoryCategory;
         IRepositoryProduct repositoryProduct;
 
-        
-        public ProductController(IRepositoryProduct repositoryProduct , IRepositoryCategory repositoryCategory)
+
+        public ProductController(IRepositoryProduct repositoryProduct, IRepositoryCategory repositoryCategory)
         {
             this.repositoryCategory = repositoryCategory;
             this.repositoryProduct = repositoryProduct;
         }
 
         // GET: Product
-        public IActionResult Index( string name , int page = 1)
+        public IActionResult Index(string name, int page = 1)
         {
             page = page < 1 ? 1 : page;
             if (string.IsNullOrEmpty(name))
@@ -60,7 +60,7 @@ namespace DoAN_S4.Areas.Admin.Controllers
         // POST: Product/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create(Product product  ,IFormCollection collection, IFormFile formFile)
+        public ActionResult Create(Product product, IFormCollection collection, IFormFile formFile)
         {
             if (ModelState.IsValid)
             {
@@ -79,19 +79,23 @@ namespace DoAN_S4.Areas.Admin.Controllers
                         file.CopyTo(stream);
                         product.Images = FileName; // gán tên ảnh cho thuộc tính Avatar
                     }
-
+                }
+                try
+                {
+                    // TODO: Add insert logic here
+                    repositoryProduct.Insert(product);
+                    return RedirectToAction(nameof(Index));
+                }
+                catch
+                {
+                    return View();
                 }
             }
-            try
-            {
-                // TODO: Add insert logic here
-                repositoryProduct.Insert(product);
-                return RedirectToAction(nameof(Index));
-            }
-            catch
+            else
             {
                 return View();
             }
+
         }
 
         // GET: Product/Edit/5
@@ -104,7 +108,7 @@ namespace DoAN_S4.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit(Product product, IFormFile fileUpload , IFormCollection collection, IFormFile formFile)
+        public IActionResult Edit(Product product, IFormFile fileUpload, IFormCollection collection, IFormFile formFile)
         {
             if (ModelState.IsValid)
             {
@@ -136,7 +140,7 @@ namespace DoAN_S4.Areas.Admin.Controllers
             {
                 return View();
             }
-          
+
         }
 
         public IActionResult productFull()
