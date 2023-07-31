@@ -58,20 +58,13 @@ namespace DoAN_S4.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(Size size)
         {
-            if (ModelState.IsValid)
+            try
             {
-                try
-                {
-                    // TODO: Add insert logic here
-                    repositorySize.Insert(size);
-                    return RedirectToAction(nameof(Index));
-                }
-                catch
-                {
-                    return View();
-                }
+                // TODO: Add insert logic here
+                repositorySize.Insert(size);
+                return RedirectToAction(nameof(Index));
             }
-            else
+            catch
             {
                 return View();
             }

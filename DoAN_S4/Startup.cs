@@ -12,10 +12,6 @@ using Microsoft.Extensions.DependencyInjection;
 using DoAN_S4.Areas.Admin.Models.BussinesModel;
 using DoAN_S4.Areas.Admin.Models.BussinesModel.IRepository;
 using DoAN_S4.Areas.Admin.Models.BussinesModel.Reposity;
-using Microsoft.Extensions.DependencyInjection.Extensions;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Authentication.Cookies;
-using MongoDB.Driver;
 
 namespace DoAN_S4
 {
@@ -42,7 +38,11 @@ namespace DoAN_S4
             services.AddScoped<IRepositoryProduct, RepositoryProduct>();
             services.AddScoped<IRepositorySize, RepositorySize>();
             services.AddScoped<IRepositotyColor, RepositoryColor>();
-            services.AddScoped<IRepositoryAccount, RepositoryAccount>();
+            services.AddScoped<IRepositoryComment, RepositoryComment>();
+            services.AddScoped<IRepositoryDiscoutCode, RepositoryDiscoutCode>();
+
+
+
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
