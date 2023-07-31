@@ -12,12 +12,16 @@ namespace DoAN_S4.Models.DataModel
     {
         [BsonId]
         [BsonElement("_id")]
+        [Required(ErrorMessage = "Id không được để trống")]
         public int _id { get; set; }
 
         [BsonElement("CategoryName")]
+        [Required(ErrorMessage = "Tên danh mục không được để trống")]
+
         public string CategoryName { get; set; }
 
         [BsonElement("Status")]
+        [Required(ErrorMessage = "Tên Status không được để trống")]
         public bool Status { get; set; }
             
     }

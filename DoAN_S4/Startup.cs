@@ -12,6 +12,8 @@ using Microsoft.Extensions.DependencyInjection;
 using DoAN_S4.Areas.Admin.Models.BussinesModel;
 using DoAN_S4.Areas.Admin.Models.BussinesModel.IRepository;
 using DoAN_S4.Areas.Admin.Models.BussinesModel.Reposity;
+using Microsoft.Extensions.DependencyInjection.Extensions;
+using Microsoft.EntityFrameworkCore;
 
 namespace DoAN_S4
 {
@@ -38,9 +40,20 @@ namespace DoAN_S4
             services.AddScoped<IRepositoryProduct, RepositoryProduct>();
             services.AddScoped<IRepositorySize, RepositorySize>();
             services.AddScoped<IRepositotyColor, RepositoryColor>();
+            services.AddScoped<IRepositoryAccount, RepositoryAccount>();
 
 
+            ////using Microsoft.Extensions.DependencyInjection.Extensions;
+            //services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
+            ////Cấu hình sử dụng sesion
+            //services.AddDistributedMemoryCache();
+            //services.AddSession(osp =>
+            //{
+            //    osp.IdleTimeout = TimeSpan.FromHours(1);
+            //    osp.Cookie.Name = ".Bkap.Sesion";
+            //    osp.Cookie.HttpOnly = true;
+            //});
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
@@ -60,6 +73,7 @@ namespace DoAN_S4
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+            //app.UseSession();
             app.UseCookiePolicy();
 
             app.UseMvc(routes =>
