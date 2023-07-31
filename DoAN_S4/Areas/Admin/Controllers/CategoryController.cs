@@ -55,24 +55,16 @@ namespace DoAN_S4.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(Category  category)
         {
-            if (ModelState.IsValid)
+            try
             {
-                try
-                {
-                    // TODO: Add insert logic here
-                    repositoryCategory.Insert(category);
-                    return RedirectToAction(nameof(Index));
-                }
-                catch
-                {
-                    return View();
-                }
+                // TODO: Add insert logic here
+                repositoryCategory.Insert(category);
+                return RedirectToAction(nameof(Index));
             }
-            else
+            catch
             {
                 return View();
             }
-               
         }
 
         // GET: Category/Edit/5

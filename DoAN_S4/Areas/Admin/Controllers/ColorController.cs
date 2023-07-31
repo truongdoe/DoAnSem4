@@ -56,20 +56,13 @@ namespace DoAN_S4.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(Color color)
         {
-            if (ModelState.IsValid)
+            try
             {
-                try
-                {
-                    // TODO: Add insert logic here
-                    repositotyColor.Insert(color);
-                    return RedirectToAction(nameof(Index));
-                }
-                catch
-                {
-                    return View();
-                }
+                // TODO: Add insert logic here
+                repositotyColor.Insert(color);
+                return RedirectToAction(nameof(Index));
             }
-            else
+            catch
             {
                 return View();
             }
