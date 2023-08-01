@@ -40,6 +40,8 @@ namespace DoAN_S4
             services.AddScoped<IRepositotyColor, RepositoryColor>();
             services.AddScoped<IRepositoryComment, RepositoryComment>();
             services.AddScoped<IRepositoryDiscoutCode, RepositoryDiscoutCode>();
+            services.AddScoped<IRepositoryBlog, RepositoryBlog>();
+            services.AddScoped<IRepositoryContact, RepositoryContact>();
 
 
 
